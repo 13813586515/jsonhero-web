@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": "user-001",
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "role": "admin",
+      "departmentId": "dept-001"
+    },
+    {
+      "id": "user-002",
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "role": "developer",
+      "departmentId": "dept-002"
+    },
+    {
+      "id": "user-003",
+      "name": "Carol Williams",
+      "email": "carol@example.com",
+      "role": "designer",
+      "departmentId": "dept-003"
+    },
+    {
+      "id": "user-004",
+      "name": "David Brown",
+      "email": "david@example.com",
+      "role": "developer",
+      "departmentId": "dept-002"
+    }
+  ],
+  "departments": [
+    {
+      "id": "dept-001",
+      "name": "Executive",
+      "location": "Floor 10",
+      "managerId": "user-001"
+    },
+    {
+      "id": "dept-002",
+      "name": "Engineering",
+      "location": "Floor 5",
+      "managerId": "user-002"
+    },
+    {
+      "id": "dept-003",
+      "name": "Design",
+      "location": "Floor 6",
+      "managerId": "user-003"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-001",
+      "name": "Website Redesign",
+      "status": "in_progress",
+      "ownerId": "user-003",
+      "assigneeIds": ["user-002", "user-004"],
+      "departmentId": "dept-003"
+    },
+    {
+      "id": "proj-002",
+      "name": "API Integration",
+      "status": "planning",
+      "ownerId": "user-002",
+      "assigneeIds": ["user-004"],
+      "departmentId": "dept-002"
+    },
+    {
+      "id": "proj-003",
+      "name": "Mobile App",
+      "status": "completed",
+      "ownerId": "user-001",
+      "assigneeIds": ["user-002", "user-003", "user-004"],
+      "departmentId": "dept-001"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Design homepage mockup",
+      "status": "completed",
+      "projectId": "proj-001",
+      "assigneeId": "user-003",
+      "reporterId": "user-001"
+    },
+    {
+      "id": "task-002",
+      "title": "Implement user authentication",
+      "status": "in_progress",
+      "projectId": "proj-002",
+      "assigneeId": "user-002",
+      "reporterId": "user-002"
+    },
+    {
+      "id": "task-003",
+      "title": "Create responsive layout",
+      "status": "pending",
+      "projectId": "proj-001",
+      "assigneeId": "user-004",
+      "reporterId": "user-003"
+    },
+    {
+      "id": "task-004",
+      "title": "Write API documentation",
+      "status": "completed",
+      "projectId": "proj-003",
+      "assigneeId": "user-002",
+      "reporterId": "user-001"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "systemLogs": [
+    {
+      "id": "log-001",
+      "timestamp": 1712140800000,
+      "level": "info",
+      "message": "System started successfully",
+      "source": "system-boot",
+      "details": {
+        "service": "api-gateway",
+        "version": "2.1.0",
+        "environment": "production"
+      }
+    },
+    {
+      "id": "log-002",
+      "timestamp": 1712144400000,
+      "level": "info",
+      "message": "User authentication successful",
+      "source": "auth-service",
+      "details": {
+        "userId": "user-123",
+        "method": "oauth2",
+        "ip": "192.168.1.100"
+      }
+    },
+    {
+      "id": "log-003",
+      "timestamp": 1712148000000,
+      "level": "warn",
+      "message": "High CPU usage detected",
+      "source": "monitoring",
+      "details": {
+        "server": "prod-web-01",
+        "cpuUsage": 89,
+        "threshold": 80
+      }
+    },
+    {
+      "id": "log-004",
+      "timestamp": 1712151600000,
+      "level": "error",
+      "message": "Database connection timeout",
+      "source": "database-service",
+      "details": {
+        "connectionId": "conn-987",
+        "timeout": 30000,
+        "query": "SELECT * FROM orders WHERE status = 'pending'"
+      }
+    },
+    {
+      "id": "log-005",
+      "timestamp": 1712155200000,
+      "level": "info",
+      "message": "Cache invalidation completed",
+      "source": "cache-service",
+      "details": {
+        "keysInvalidated": 1542,
+        "durationMs": 245
+      }
+    },
+    {
+      "id": "log-006",
+      "timestamp": 1712158800000,
+      "level": "warn",
+      "message": "Memory usage approaching limit",
+      "source": "monitoring",
+      "details": {
+        "server": "prod-api-03",
+        "memoryUsed": "3.8GB",
+        "memoryLimit": "4GB"
+      }
+    },
+    {
+      "id": "log-007",
+      "timestamp": 1712162400000,
+      "level": "error",
+      "message": "Payment processing failed",
+      "source": "payment-service",
+      "details": {
+        "orderId": "order-456",
+        "amount": 99.99,
+        "errorCode": "INSUFFICIENT_FUNDS"
+      }
+    },
+    {
+      "id": "log-008",
+      "timestamp": 1712166000000,
+      "level": "info",
+      "message": "Deployment completed successfully",
+      "source": "deployment-service",
+      "details": {
+        "service": "user-service",
+        "version": "3.2.1",
+        "deployedBy": "admin@example.com"
+      }
+    },
+    {
+      "id": "log-009",
+      "timestamp": 1712169600000,
+      "level": "info",
+      "message": "Backup completed",
+      "source": "backup-service",
+      "details": {
+        "database": "primary_db",
+        "size": "125GB",
+        "duration": "1h 23m"
+      }
+    },
+    {
+      "id": "log-010",
+      "timestamp": 1712173200000,
+      "level": "error",
+      "message": "API rate limit exceeded",
+      "source": "rate-limiter",
+      "details": {
+        "clientId": "client-789",
+        "limit": 1000,
+        "requestsMade": 1245
+      }
+    }
+  ]
+}

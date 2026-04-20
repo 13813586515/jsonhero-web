@@ -4,6 +4,7 @@ import { memo, useEffect, useMemo, useRef } from "react";
 import { ColumnViewNode } from "~/useColumnView";
 import { colorForItemAtPath } from "~/utilities/colors";
 import { Body } from "./Primitives/Body";
+import { DiffBadge, useDiffHighlight } from "./DiffHighlight";
 
 export type ColumnItemProps = {
   item: ColumnViewNode;
@@ -21,6 +22,7 @@ function ColumnItemElement({
   onClick,
 }: ColumnItemProps) {
   const htmlElement = useRef<HTMLDivElement>(null);
+  const { diffType, diffClass } = useDiffHighlight(item.id);
 
   const showArrow = item.children.length > 0;
 
@@ -52,7 +54,7 @@ function ColumnItemElement({
 
   return (
     <div
-      className={`flex h-9 items-center justify-items-stretch mx-1 px-1 py-1 my-1 rounded-sm ${stateStyle}`}
+      className={`flex h-9 items-center justify-items-stretch mx-1 px-1 py-1 my-1 rounded-sm ${stateStyle} ${diffClass}`}
       onClick={() => onClick && onClick(item.id)}
       ref={htmlElement}
     >
@@ -69,7 +71,10 @@ function ColumnItemElement({
       </div>
 
       <div className="flex flex-grow flex-shrink items-baseline justify-between truncate">
-        <Body className="flex-grow flex-shrink-0 pl-3 pr-2 ">{item.title}</Body>
+        <div className="flex items-center flex-grow flex-shrink-0 pl-3 pr-2">
+          <Body className="flex-grow flex-shrink-0">{item.title}</Body>
+          <DiffBadge diffType={diffType} />
+        </div>
         {item.subtitle && (
           <Mono
             className={`truncate pr-1 transition duration-75 ${
