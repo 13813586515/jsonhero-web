@@ -1,0 +1,80 @@
+{
+  "version": "v1.1.0",
+  "name": "User Profile Management System",
+  "description": "A system for managing user profiles and permissions with enhanced features",
+  "status": "active",
+  "createdAt": "2024-01-15T10:00:00Z",
+  "updatedAt": "2024-04-01T09:00:00Z",
+  "features": [
+    "User registration",
+    "Profile editing",
+    "Role-based access control",
+    "Password reset",
+    "Two-factor authentication",
+    "OAuth integration"
+  ],
+  "settings": {
+    "theme": "dark",
+    "language": "en",
+    "notifications": {
+      "email": true,
+      "push": true,
+      "sms": true
+    },
+    "privacy": {
+      "profileVisibility": "friends",
+      "showEmail": false,
+      "showPhone": false,
+      "showLocation": true
+    },
+    "security": {
+      "twoFactorEnabled": true,
+      "sessionTimeout": 3600
+    }
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "role": "admin",
+      "active": true,
+      "profile": {
+        "bio": "Senior software engineer with 12 years experience",
+        "location": "Seattle, WA",
+        "website": "https://alicejohnson.dev",
+        "avatar": "https://example.com/avatar-1.png"
+      },
+      "permissions": ["read", "write", "delete", "manage_users", "audit"]
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "role": "editor",
+      "active": true,
+      "profile": {
+        "bio": "Senior content creator and editor",
+        "location": "Boston, MA"
+      },
+      "permissions": ["read", "write", "publish"]
+    },
+    {
+      "id": 4,
+      "name": "Diana Prince",
+      "email": "diana@example.com",
+      "role": "moderator",
+      "active": true,
+      "profile": {
+        "bio": "Community manager and moderator"
+      },
+      "permissions": ["read", "moderate"]
+    }
+  ],
+  "metadata": {
+    "totalUsers": 2156,
+    "activeUsers": 1845,
+    "lastUpdated": "2024-04-15T16:45:00Z",
+    "tags": ["user-management", "profile", "auth", "security"]
+  }
+}

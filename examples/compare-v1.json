@@ -1,0 +1,71 @@
+{
+  "version": "v1.0.0",
+  "name": "User Profile Management System",
+  "description": "A system for managing user profiles and permissions",
+  "status": "active",
+  "createdAt": "2024-01-15T10:00:00Z",
+  "features": [
+    "User registration",
+    "Profile editing",
+    "Role-based access control",
+    "Password reset"
+  ],
+  "settings": {
+    "theme": "light",
+    "language": "en",
+    "notifications": {
+      "email": true,
+      "push": false,
+      "sms": false
+    },
+    "privacy": {
+      "profileVisibility": "public",
+      "showEmail": false,
+      "showPhone": false
+    }
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "role": "admin",
+      "active": true,
+      "profile": {
+        "bio": "Software engineer with 10 years experience",
+        "location": "San Francisco, CA",
+        "website": "https://alice.dev"
+      },
+      "permissions": ["read", "write", "delete", "manage_users"]
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "role": "editor",
+      "active": true,
+      "profile": {
+        "bio": "Content creator and editor",
+        "location": "New York, NY"
+      },
+      "permissions": ["read", "write"]
+    },
+    {
+      "id": 3,
+      "name": "Charlie Brown",
+      "email": "charlie@example.com",
+      "role": "viewer",
+      "active": false,
+      "profile": {
+        "bio": "Analyst and researcher"
+      },
+      "permissions": ["read"]
+    }
+  ],
+  "metadata": {
+    "totalUsers": 1542,
+    "activeUsers": 1203,
+    "lastUpdated": "2024-03-01T14:30:00Z",
+    "tags": ["user-management", "profile", "auth"]
+  }
+}

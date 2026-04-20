@@ -1,4 +1,4 @@
-import { TemplateIcon, CodeIcon, DownloadIcon } from "@heroicons/react/outline";
+import { TemplateIcon, CodeIcon, DownloadIcon, ShareIcon, ClockIcon } from "@heroicons/react/outline";
 import { TreeIcon } from "~/components/Icons/TreeIcon";
 import { useHotkeys } from "react-hotkeys-hook";
 import { Link, useLocation, useNavigate } from "remix";
@@ -7,6 +7,7 @@ import { ToolTip } from "./ToolTip";
 import { Body } from "./Primitives/Body";
 import { ShortcutIcon } from "./Icons/ShortcutIcon";
 import { useTheme } from "./ThemeProvider";
+import { CompareModeToggle } from "./CompareModeToggle";
 
 export function SideBar() {
   const { doc } = useJsonDoc();
@@ -50,6 +51,31 @@ export function SideBar() {
           </ToolTip>
           <TreeIcon className="p-2 w-full h-full" />
         </SidebarLink>
+        <SidebarLink to={`/j/${doc.id}/graph`} hotKey="option+4,alt+4">
+          <ToolTip arrow="left">
+            <Body>Graph view</Body>
+            <ShortcutIcon className="w-[26px] h-[26px] ml-1 text-slate-700 bg-slate-200 dark:text-slate-300 dark:bg-slate-800">
+              ⌥
+            </ShortcutIcon>
+            <ShortcutIcon className="w-[26px] h-[26px] ml-1 text-slate-700 bg-slate-200 dark:text-slate-300 dark:bg-slate-800">
+              4
+            </ShortcutIcon>
+          </ToolTip>
+          <ShareIcon className="p-2 w-full h-full" />
+        </SidebarLink>
+        <SidebarLink to={`/j/${doc.id}/timeline`} hotKey="option+5,alt+5">
+          <ToolTip arrow="left">
+            <Body>Timeline view</Body>
+            <ShortcutIcon className="w-[26px] h-[26px] ml-1 text-slate-700 bg-slate-200 dark:text-slate-300 dark:bg-slate-800">
+              ⌥
+            </ShortcutIcon>
+            <ShortcutIcon className="w-[26px] h-[26px] ml-1 text-slate-700 bg-slate-200 dark:text-slate-300 dark:bg-slate-800">
+              5
+            </ShortcutIcon>
+          </ToolTip>
+          <ClockIcon className="p-2 w-full h-full" />
+        </SidebarLink>
+        <CompareModeToggle />
       </ol>
       <ol>
         <SidebarLink>
