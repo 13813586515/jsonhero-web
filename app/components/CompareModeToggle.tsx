@@ -1,20 +1,33 @@
 import { useState } from "react";
 import { useJsonCompare } from "~/hooks/useJsonCompare";
 import * as Dialog from "@radix-ui/react-dialog";
-import { ArrowPathIcon, XIcon, UploadIcon } from "@heroicons/react/outline";
+import { RefreshIcon, XIcon, UploadIcon } from "@heroicons/react/outline";
 import { CodeEditor } from "~/components/CodeEditor";
 import { Body } from "./Primitives/Body";
 import { SmallTitle } from "./Primitives/SmallTitle";
 import { ToolTip } from "./ToolTip";
-import { useJsonDoc } from "~/hooks/useJsonDoc";
 import { ShortcutIcon } from "./Icons/ShortcutIcon";
+import { useHotkeys } from "react-hotkeys-hook";
 
 export function CompareModeToggle() {
   const { compareMode, setCompareMode, setCompareJson } = useJsonCompare();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [compareJsonText, setCompareJsonText] = useState("");
   const [parseError, setParseError] = useState<string | null>(null);
-  const { doc } = useJsonDoc();
+
+  useHotkeys(
+    "option+6,alt+6",
+    (e) => {
+      e.preventDefault();
+      if (compareMode) {
+        setCompareMode(false);
+        setCompareJson(null);
+      } else {
+        setDialogOpen(true);
+      }
+    },
+    [compareMode, setCompareMode, setCompareJson]
+  );
 
   const handleEnableCompare = () => {
     setDialogOpen(true);
@@ -69,10 +82,10 @@ export function CompareModeToggle() {
               ⌥
             </ShortcutIcon>
             <ShortcutIcon className="w-[26px] h-[26px] ml-1 text-slate-700 bg-slate-200 dark:text-slate-300 dark:bg-slate-800">
-              4
+              6
             </ShortcutIcon>
           </ToolTip>
-          <ArrowPathIcon className="p-2 w-full h-full" />
+          <RefreshIcon className="p-2 w-full h-full" />
         </button>
 
         <Dialog.Portal>
